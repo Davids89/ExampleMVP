@@ -8,10 +8,19 @@ public class GreenRobotEventBus implements EventBus {
 
     org.greenrobot.eventbus.EventBus eventBus;
 
-    public GreenRobotEventBus(org.greenrobot.eventbus.EventBus eventBus) {
-        this.eventBus = eventBus;
+    private static class SingletoneHolder{
+        private static final GreenRobotEventBus INSTANCE = new GreenRobotEventBus();
     }
 
+    public static GreenRobotEventBus getInstance(){
+        return SingletoneHolder.INSTANCE;
+    }
+
+    public GreenRobotEventBus() {
+        this.eventBus = org.greenrobot.eventbus.EventBus.getDefault();
+    }
+
+    @Override
     public void register(Object suscriber) {
         eventBus.register(suscriber);
     }
