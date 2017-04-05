@@ -34,4 +34,7 @@ dependencies {
     compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
     compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
     compile "org.greenrobot:eventbus:$rootProject.ext.eventbusVersion"
+
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
 }
