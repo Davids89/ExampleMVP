@@ -11,6 +11,6 @@ import retrofit2.http.Query;
 
 public interface ChuckService {
     @GET("jokes/random")
-    Call<RandomJokeResponse> getRandom(@Query("firstName") String firstName,
-                                       @Query("lastName") String lastName);
+    Call<RandomJokeResponse> getRandomWithName(@Query("firstName") String firstName,
+                                               @Query("lastName") String lastName);
 }

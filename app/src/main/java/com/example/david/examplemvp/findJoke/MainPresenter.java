@@ -10,7 +10,7 @@ public interface MainPresenter {
     void onCreate();
     void onDestroy();
 
-    void findJoke();
+    void findJoke(String name, String lastName);
 
     void onMainThread(MainEvent event);
 

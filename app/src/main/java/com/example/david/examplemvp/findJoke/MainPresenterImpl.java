@@ -37,13 +37,20 @@ public class MainPresenterImpl implements MainPresenter {
     }
 
     @Override
-    public void findJoke() {
-        repository.findJoke();
+    public void findJoke(String name, String lastName) {
+        repository.findJoke(name, lastName);
     }
 
     @Override
     @Subscribe
     public void onMainThread(MainEvent event) {
-
+        switch (event.getType()){
+            case MainEvent.onSuccess:
+                view.jokeSuccess(event.getJoke());
+                break;
+            case MainEvent.onError:
+                view.jokeError();
+                break;
+        }
     }
 }

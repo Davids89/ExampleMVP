@@ -5,5 +5,5 @@ package com.example.david.examplemvp.findJoke;
  */
 
 public interface MainRepository {
-    void findJoke();
+    void findJoke(String name, String lastName);
 }
