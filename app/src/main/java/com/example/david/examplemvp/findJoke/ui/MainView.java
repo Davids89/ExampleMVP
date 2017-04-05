@@ -1,4 +1,4 @@
-package com.example.david.examplemvp.ui;
+package com.example.david.examplemvp.findJoke.ui;
 
 /**
  * Created by david on 3/4/17.

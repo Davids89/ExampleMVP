@@ -23,6 +23,7 @@ ext{
     butterknifeVersion = '7.0.1'
     eventbusVersion = '3.0.0'
     retrofitVersion = '2.2.0'
+    interceptorVersion = '3.4.1'
 }
 
 task clean(type: Delete) {
