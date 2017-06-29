@@ -1,0 +1,36 @@
+ext {
+    buildToolsVersion = '25.0.+'
+    butterknifeVersion = '7.0.1'
+    eventbusVersion = '3.0.0'
+
+    retrofitVersion = '2.2.0'
+    okHttpVersion = '3.4.1'
+    constraintLayoutVersion ='1.0.2'
+    daggerVersion = '2.11'
+
+    junitVersion = '4.12'
+
+    viewDependencies = [
+        constraintLayout    : "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}",
+        designSupport       : "com.android.support:design:${buildToolsVersion}",
+        recyclerViewSupport : "com.android.support:recyclerview-v7:${buildToolsVersion}",
+        appCompatSupport    : "com.android.support:appcompat-v7:${buildToolsVersion}",
+        butterknife         : "com.jakewharton:butterknife:${butterknifeVersion}"
+    ]
+
+    dataDependencies = [
+        retrofitGson        : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+        retrofit            : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+        loggingInterceptor  : "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
+        okHttp              : "com.squareup.okhttp3:okhttp:${okHttpVersion}"
+    ]
+
+    acrossDependencies = [
+        dagger              : "com.google.dagger:dagger:${daggerVersion}",
+        eventBus            : "org.greenrobot:eventbus:${eventbusVersion}"
+    ]
+
+    testDependencies = [
+        junit               :    "junit:junit:${junitVersion}"
+    ]
+}

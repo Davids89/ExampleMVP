@@ -24,17 +24,25 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta3'
-    compile "com.android.support:design:$rootProject.ext.buildToolsVersion"
-    compile "com.android.support:recyclerview-v7:$rootProject.ext.buildToolsVersion"
-    compile "com.android.support:appcompat-v7:$rootProject.ext.buildToolsVersion"
-    testCompile 'junit:junit:4.12'
 
-    compile "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
-    compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
-    compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
-    compile "org.greenrobot:eventbus:$rootProject.ext.eventbusVersion"
+    def viewDependencies = rootProject.ext.viewDependencies
+    compile viewDependencies.constraintLayout
+    compile viewDependencies.designSupport
+    compile viewDependencies.recyclerViewSupport
+    compile viewDependencies.appCompatSupport
+    compile viewDependencies.butterknife
 
-    compile "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.interceptorVersion"
-    compile "com.squareup.okhttp3:okhttp:$rootProject.ext.interceptorVersion"
+    def dataDependencies = rootProject.ext.dataDependencies
+    compile dataDependencies.retrofit
+    compile dataDependencies.retrofitGson
+    compile dataDependencies.okHttp
+    compile dataDependencies.loggingInterceptor
+
+    def acrossDependencies = rootProject.ext.acrossDependencies
+    compile acrossDependencies.dagger
+    compile acrossDependencies.eventBus
+
+    def testDependencies = rootProject.ext.testDependencies
+    testCompile testDependencies.junit
+
 }
